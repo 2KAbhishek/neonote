@@ -1,0 +1,22 @@
+{{- if gt (len .Site.DisqusShortname) 0 -}}
+    {{- if or (eq .Params.comments true) (and (ne .Params.comments false) (eq .Site.Params.comments.enable true)) -}}
+        <section class="article-discussion">
+            {{- template "_internal/disqus.html" . -}}
+        </section>
+    {{- end -}}
+{{- end -}}
+{{- if or (eq .Params.giscus true) (and (ne .Params.giscus false) (eq .Site.Params.giscus.enable true)) -}}
+<script src="https://giscus.app/client.js"
+        data-repo={{ .Site.Params.giscus.repo }}
+        data-repo-id={{ .Site.Params.giscus.repoID }}
+        data-category={{ .Site.Params.giscus.category }}
+        data-category-id={{ .Site.Params.giscus.categoryID }}
+        data-mapping="title"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme={{ .Site.Params.giscus.dataTheme }}
+        data-lang={{ .Site.Params.giscus.dataLang }}
+        crossorigin="anonymous"
+        async>
+</script>
+{{- end -}}
