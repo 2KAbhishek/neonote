@@ -1,0 +1,17 @@
+{{- define "main" -}}
+<section div class="article-header">
+  <h1>{{- i18n "search" | safeHTML -}}</h1>
+</section>
+{{- $basicCSS := resources.Get "css/stork-search.css" -}}
+{{- $basicCSS = $basicCSS | resources.Minify | resources.Fingerprint "sha384" -}}
+<link rel="stylesheet" href="{{- $basicCSS.RelPermalink -}}" />
+<div class="stork-wrapper">
+  <input data-stork="posts" class="stork-input" />
+  <div data-stork="posts-output" class="stork-output"></div>
+</div>
+<script src="https://files.stork-search.net/stork.js"></script>
+<script>stork.register('posts', '/stork-posts.st');</script>
+<div class="center">
+  Search powered by <a href="https://github.com/jameslittle230/stork" target="_blank">stork</a>
+</div>
+{{- end -}}
