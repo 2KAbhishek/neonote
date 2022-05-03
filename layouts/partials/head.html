@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+{{- hugo.Generator -}}
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+
+<meta name="keywords" content={{ .Site.Params.keywords }}>
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+<meta name="author" content={{ .Site.Params.author }}>
+<meta name="copyright"content={{ .Site.Params.author }}>
+<meta http-equiv="content-language" content="zh,en">
+
+{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
+{{ if .IsHome }}
+{{ if eq $paginator.PageNumber 1 }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ else }}
+<link rel="canonical" href="{{ .Permalink }}page/{{ $paginator.PageNumber }}/">
+{{ end }}
+{{ else }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ end }}
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+{{- define "title" -}}
+    {{- $title := .Title -}}
+    {{- if and (ne $title "") (ne $title .Site.Title) -}}
+        <title>{{- $title | safeHTML -}} &nbsp;&ndash;&nbsp; {{- .Site.Title | safeHTML -}}</title>
+    {{- else -}}
+        {{- $slogan := .Site.Params.slogan -}}
+        <title>{{- .Site.Title | safeHTML -}}{{- if and (isset .Site.Params "slogan") (ne $slogan "") -}} &nbsp;&ndash;&nbsp;
+            {{- $slogan | safeHTML -}}{{- end -}}</title>
+    {{- end -}}
+{{- end -}}
+
+{{- block "title" . -}}{{- end -}}
+
+{{- partial "style.html" . -}}
