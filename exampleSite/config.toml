@@ -86,6 +86,17 @@ css = ["css/fonts.css"]
 [params.comments]
 enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
 
+# Another comments system that using github discussion. See detail in https://giscus.app
+# Conflict with Disqus
+# TODO: auto change light/dark theme when the whole site is setting auto-theme
+[params.giscus]
+enable = true
+repo = "2kabhishek/hugo-neovimium"
+repoID = "some-repo-id"
+category = "Announcements"
+categoryID = "some-category-id"
+dataTheme = "dark"
+dataLang = "en"
 
 [params.math]
 enable = false # load math globally, default: false. You can always enable math on per page.
