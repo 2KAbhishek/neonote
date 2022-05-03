@@ -1,0 +1,8 @@
+[build]
+  publish = "exampleSite/public"
+  command = "chmod +x build.sh && ./build.sh"
+
+[build.environment]
+  HUGO_THEME = "repo"
+  HUGO_THEMESDIR = "/opt/build"
+  HUGO_VERSION = "0.82.0"
