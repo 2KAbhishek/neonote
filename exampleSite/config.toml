@@ -1,8 +1,8 @@
-baseURL = "https://2kabhishek.github.io/hugo-neovimium/"
-title = "Neovimium"
-theme = "hugo-neovimium"
+baseURL = "https://2kabhishek.github.io/neonote/"
+title = "Neonote"
+theme = "neonote"
 themesdir = "../.."
-copyright = "©2022 Neovimium"
+copyright = "©2022 Neonote"
 
 languageCode = "en"  # for the rss generation. See https://github.com/gohugoio/hugo/issues/349
 defaultContentLanguage = "en"  # for the site language. Use Hugo i18n configuration
@@ -38,7 +38,7 @@ mediaType = "text/toml"
 
 [minify]
 # Need Hugo version v0.68.0+
-# Newer Hugo version may fix some minify issues. So if you want to use this function, use lastest Hugo for a better experience.
+# Newer Hugo version may fix some minify issues. So if you want to use this function, use latest Hugo for a better experience.
   disableCSS = false
   disableHTML = false
   disableJS = false
@@ -72,7 +72,7 @@ mediaType = "text/toml"
 style = "auto"  # default: auto. light: light theme, dark: dark theme, auto: based on system.
 logo = ""
 keywords = "blog, theme, minimalist"
-description = "Hugo neovimium theme, a minimalist theme for bloggers"
+description = "Hugo neonote theme, a minimalist theme for bloggers"
 author = "2kabhishek"
 
 ShowOutdatedOnPosts = true  # Add a prompt box before a post if the post published long ago
@@ -91,7 +91,7 @@ enable = false  # En/Disable comments globally, default: false. You can always e
 # TODO: auto change light/dark theme when the whole site is setting auto-theme
 [params.giscus]
 enable = true
-repo = "2kabhishek/hugo-neovimium"
+repo = "2kabhishek/neonote"
 repoID = "some-repo-id"
 category = "Announcements"
 categoryID = "some-category-id"

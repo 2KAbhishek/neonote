@@ -1,24 +1,24 @@
 <div align = "center">
 
-<h1><a href="https://2kabhishek.github.io/hugo-neovimium">hugo-neovimium</a></h1>
+<h1><a href="https://2kabhishek.github.io/neonote">neonote</a></h1>
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium/blob/main/LICENSE">
-<img alt="License" src="https://img.shields.io/github/license/2kabhishek/hugo-neovimium?style=plastic&color=white&label=License"> </a>
+<a href="https://github.com/2KAbhishek/neonote/blob/main/LICENSE">
+<img alt="License" src="https://img.shields.io/github/license/2kabhishek/neonote?style=plastic&color=white&label=License"> </a>
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium/pulse">
-<img alt="Updated" src="https://img.shields.io/github/last-commit/2kabhishek/hugo-neovimium?style=plastic&color=e30724&label=Updated"> </a>
+<a href="https://github.com/2KAbhishek/neonote/pulse">
+<img alt="Updated" src="https://img.shields.io/github/last-commit/2kabhishek/neonote?style=plastic&color=e30724&label=Updated"> </a>
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium/stargazers">
-<img alt="Stars" src="https://img.shields.io/github/stars/2kabhishek/hugo-neovimium?style=plastic&color=00d451&label=Stars"></a>
+<a href="https://github.com/2KAbhishek/neonote/stargazers">
+<img alt="Stars" src="https://img.shields.io/github/stars/2kabhishek/neonote?style=plastic&color=00d451&label=Stars"></a>
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium/network/members">
-<img alt="Forks" src="https://img.shields.io/github/forks/2kabhishek/hugo-neovimium?style=plastic&color=1688f0&label=Forks"> </a>
+<a href="https://github.com/2KAbhishek/neonote/network/members">
+<img alt="Forks" src="https://img.shields.io/github/forks/2kabhishek/neonote?style=plastic&color=1688f0&label=Forks"> </a>
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium/watchers">
-<img alt="Watchers" src="https://img.shields.io/github/watchers/2kabhishek/hugo-neovimium?style=plastic&color=ff5500&label=Watchers"> </a>
+<a href="https://github.com/2KAbhishek/neonote/watchers">
+<img alt="Watchers" src="https://img.shields.io/github/watchers/2kabhishek/neonote?style=plastic&color=ff5500&label=Watchers"> </a>
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium/graphs/contributors">
-<img alt="Contributors" src="https://img.shields.io/github/contributors/2kabhishek/hugo-neovimium?style=plastic&color=f0f&label=Contributors"> </a>
+<a href="https://github.com/2KAbhishek/neonote/graphs/contributors">
+<img alt="Contributors" src="https://img.shields.io/github/contributors/2kabhishek/neonote?style=plastic&color=f0f&label=Contributors"> </a>
 
 <a href="https://github.com/2KAbhishek?tab=followers">
 <img alt="Followers" src="https://img.shields.io/github/followers/2kabhishek?color=222&style=plastic&label=Followers"> </a>
@@ -26,9 +26,9 @@
 <h3>Short sweet headline with 🎇🎉</h3>
 
 <figure>
-  <img src= "https://raw.githubusercontent.com/2KAbhishek/hugo-neovimium/main/images/screenshot.jpg" alt="hugo-neovimium Demo" style="width:100%">
+  <img src= "https://raw.githubusercontent.com/2KAbhishek/neonote/main/images/screenshot.jpg" alt="neonote Demo" style="width:100%">
   <br/>
-  <figcaption>hugo-neovimium screenshot</figcaption>
+  <figcaption>neonote screenshot</figcaption>
 </figure>
 
 </div>
@@ -99,7 +99,7 @@ hugo mod init github.com/<your_user>/<your_project>
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/2kabhishek/hugo-neovimium"
+    path = "github.com/2kabhishek/neonote"
 ```
 
 ### Option 2
@@ -109,13 +109,13 @@ Use git submodule.
 1. Add theme repository as git submodule
 
 ```bash
-git submodule add https://github.com/2kabhishek/hugo-neovimium.git themes/hugo-neovimium
+git submodule add https://github.com/2kabhishek/neonote.git themes/neonote
 ```
 
 2. Set theme in your config.toml
 
 ```toml
-theme = "hugo-neovimium"
+theme = "neonote"
 ```
 
 ## Configure theme
@@ -126,9 +126,9 @@ There is an example `config.toml`:
 
 ```toml
 
-baseURL = "https://2kabhishek.github.io/hugo-neovimium/"
-title = "hugo-neovimium"
-copyright = "©2022 hugo-neovimium"
+baseURL = "https://2kabhishek.github.io/neonote/"
+title = "neonote"
+copyright = "©2022 neonote"
 
 languageCode = "en"
 hasCJKLanguage = true
@@ -147,7 +147,7 @@ enableEmoji = true
 
 [module]
   [[module.imports]]
-    path = "github.com/2kabhishek/hugo-neovimium"  # Use module to use this theme
+    path = "github.com/2kabhishek/neonote"  # Use module to use this theme
 
 [minify]
 # Deploy with --minify command to minify assets
@@ -257,13 +257,13 @@ If you installed the theme by Hugo module
 
 ```bash
 hugo mod get -u  # This will update all modules
-hugo mod get -u github.com/2kabhishek/hugo-neovimium  # This will update current theme
+hugo mod get -u github.com/2kabhishek/neonote  # This will update current theme
 ```
 
 If you installed the theme by git submodule, first go to the theme directory, then `git pull`
 
 ```bash
-cd themes/hugo-neovimium && git pull
+cd themes/neonote && git pull
 ```
 
 ## More Info
@@ -276,6 +276,6 @@ cd themes/hugo-neovimium && git pull
 
 <div align="center">
 
-<a href="https://github.com/2KAbhishek/hugo-neovimium">Source</a> | <a href="https://2kabhishek.github.io/hugo-neovimium">Website</a>
+<a href="https://github.com/2KAbhishek/neonote">Source</a> | <a href="https://2kabhishek.github.io/neonote">Website</a>
 
 </div>
