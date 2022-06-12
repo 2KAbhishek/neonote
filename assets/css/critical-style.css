@@ -21,9 +21,9 @@ html[data-theme='dark'] img {
 }
 
 html {
-    background: #fff;
-    --site-name-color: #3f4b67;
-    --color-primary: #005ab4;
+    background: #EEEEEE;
+    --site-name-color: #0A0A0F;
+    --color-primary: #1688f0;
     --link-underline: #90cff9;
     --blockquote-border-left: 6px solid #0051a2;
     --block-background-color: #f7faff;
@@ -34,9 +34,9 @@ html {
 }
 
 html[data-theme='dark'] {
-    background: #22272e;
-    --site-name-color: #539bf5;
-    --color-primary: #99bde1;
+    background: #0A0A0F;
+    --site-name-color: #EEEEEE;
+    --color-primary: #1688f0;
     --link-underline: #0051a2;
     --blockquote-border-left: 6px solid #5176bf;
     --block-background-color: #002c58;
@@ -215,7 +215,7 @@ html[data-theme='dark'] .dark-hidden{
     margin: 2em 0 3em;
     text-align: center;
   }
-  
+
 .tag-cloud-tags {
 display: inline-block;
 position: relative;
