@@ -18,6 +18,11 @@
 {{- $coreCSS = slice $coreCSS ("" | resources.FromString "css/_core.css") | resources.Concat "css/core.css" -}}
 {{- $coreCSS = $coreCSS | resources.Minify | resources.Fingerprint "sha384" -}}
 
+{{- $fontCSS := resources.Get "css/fonts.css" -}}
+{{- $fontCSS = $fontCSS | resources.Minify -}}
+
 <link rel="preload" href="{{- $coreCSS.RelPermalink -}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{- $coreCSS.RelPermalink -}}" integrity="{{- $coreCSS.Data.Integrity -}}"></noscript>
 <style type="text/css">{{- $criticalCSS.Content | safeCSS -}}</style>
+
+<link rel="stylesheet" href="{{- $fontCSS.RelPermalink -}}">
