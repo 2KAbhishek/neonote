@@ -22,13 +22,13 @@ samp {
   padding: 2px 4px;
   border-radius: 3px;
   color: #c7254e;
-  background-color: rgba(199, 37, 78, .05);
+  background-color: rgba(199, 37, 78, 0.05);
 }
 
-pre>code,
-pre>kbd,
-pre>tt,
-pre>samp {
+pre > code,
+pre > kbd,
+pre > tt,
+pre > samp {
   font-size: inherit;
   color: inherit;
   background-color: inherit;
@@ -38,10 +38,10 @@ pre>samp {
 }
 
 table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    text-indent: 0;
-	border-color: inherit;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-indent: 0;
+  border-color: inherit;
 }
 
 .markdown-body blockquote,
@@ -83,7 +83,7 @@ table {
 
 .markdown-body blockquote {
   position: relative;
-  padding: .95em;
+  padding: 0.95em;
   border-radius: 6px;
   border-left: var(--blockquote-border-left);
   background-color: var(--block-background-color);
@@ -124,23 +124,23 @@ table {
   -webkit-padding-start: 2em;
 }
 
-.markdown-body li+li {
+.markdown-body li + li {
   margin-top: 20px;
 }
 
-.markdown-body li> :first-child {
+.markdown-body li > :first-child {
   margin-top: 0 !important;
 }
 
-.markdown-body li> :last-child {
+.markdown-body li > :last-child {
   margin-bottom: 0 !important;
 }
 
-.markdown-body blockquote> :first-child {
+.markdown-body blockquote > :first-child {
   margin-top: 0;
 }
 
-.markdown-body blockquote> :last-child {
+.markdown-body blockquote > :last-child {
   margin-bottom: 0;
 }
 
@@ -200,12 +200,12 @@ table {
 }
 
 .article-header {
-    text-align: center;
+  text-align: center;
 }
 
 .article-labels {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .article-navigation {
@@ -216,7 +216,7 @@ table {
   margin: 0;
 }
 
-.article-navigation p+p {
+.article-navigation p + p {
   margin-top: 4px;
 }
 
@@ -233,37 +233,37 @@ table {
 }
 
 .footer-pic {
-    margin: 10px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
 .toc {
-    grid-column: 3 / 4;
-    position: sticky;
-    top: 10px;
-    align-self: start;
-    padding: 10px;
-    font-size: 14px;
-    margin-right:10px;
-    background-color: var(--block-background-color);
-    box-shadow: var(--box-shadow);
-    max-height: 85vh;
-    overflow-y: auto;
+  grid-column: 3 / 4;
+  position: sticky;
+  top: 10px;
+  align-self: start;
+  padding: 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  background-color: var(--block-background-color);
+  box-shadow: var(--box-shadow);
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .toc-title {
-    text-align: center;
-    font-size: 20px;
-    padding-bottom: 10px;
-    color: var(--title-color);
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 10px;
+  color: var(--title-color);
 }
 
 nav ul {
-    list-style: none;
-    margin-left: 1em;
-    padding-left: 0;
+  list-style: none;
+  margin-left: 1em;
+  padding-left: 0;
 }
 
-nav ul li a{
+nav ul li a {
   color: var(--site-name-color);
   transition: all 100ms ease-in-out;
   text-decoration: none;
@@ -285,6 +285,6 @@ nav ul li a:focus {
 
 @media (max-width: 1080px) {
   .toc {
-      display: none;
+    display: none;
   }
 }

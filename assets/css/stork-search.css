@@ -5,10 +5,10 @@ html {
   --stork-btn-color: hsla(0, 0%, 0%, 0.3);
 }
 
-html[data-theme='dark'] {
-  --stork-background-color: hsl(215,15%,20%);
-  --stork-message-color: hsla(0,0%,85.5%, 0.8);
-  --stork-lighter-color: hsla(0,0%,85.5%, 0.6);
+html[data-theme="dark"] {
+  --stork-background-color: hsl(215, 15%, 20%);
+  --stork-message-color: hsla(0, 0%, 85.5%, 0.8);
+  --stork-lighter-color: hsla(0, 0%, 85.5%, 0.6);
   --stork-btn-color: hsla(0, 0%, 0%, 0.3);
 }
 
@@ -74,7 +74,7 @@ html[data-theme='dark'] {
 }
 
 .stork-result:not(.selected) {
-    color: var(--stork-message-color);
+  color: var(--stork-message-color);
 }
 
 .stork-attribution a:link,
@@ -154,8 +154,8 @@ html[data-theme='dark'] {
   background-color: hsl(59, 98%, 58%);
 }
 
-html[data-theme='dark'] .stork-result:not(.selected) .stork-highlight {
-  background-color:hsl(58.9,98.1%,20%);
+html[data-theme="dark"] .stork-result:not(.selected) .stork-highlight {
+  background-color: hsl(58.9, 98.1%, 20%);
 }
 
 .stork-error,
