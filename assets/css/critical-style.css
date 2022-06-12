@@ -112,6 +112,11 @@ a:hover {
     color: var(--site-name-color);
 }
 
+.site-slogan {
+    font-size: 15px;
+    color: var(--site-name-color);
+}
+
 .site-logo {
     height: 38px;
     border-radius: 3px;
