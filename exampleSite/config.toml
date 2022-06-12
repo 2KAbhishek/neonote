@@ -11,27 +11,27 @@ hasCJKLanguage = true
 enableRobotsTXT = true
 
 # Enable Disqus
-#disqusShortname = "XXX"
+  #disqusShortname = "XXX"
 
 # Google Analytics
-#googleAnalytics = "UA-123-45"
+  #googleAnalytics = "UA-123-45"
 
 [markup.highlight]
-codeFences = true
-guessSyntax = true
-noClasses = true
-style = "dracula"
+  codeFences = true
+  guessSyntax = true
+  noClasses = true
+  style = "dracula"
 
 [markup.goldmark.renderer]
-unsafe = true  # enable raw HTML in Markdown
+  unsafe = true  # enable raw HTML in Markdown
 
 [mediaTypes]
 [mediaTypes."text/toml"]
-suffixes = ["toml"]
+  suffixes = ["toml"]
 
 [outputFormats]
 [outputFormats.TOML]
-mediaType = "text/toml"
+  mediaType = "text/toml"
 
 [outputs]
   home = ["HTML", "RSS", "TOML"]
@@ -80,27 +80,27 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
 	       	    # a prompt box will appear before the post
 
 [params.assets]
-css = ["css/fonts.css"]
+  css = ["css/fonts.css"]
 
 # Disqus comments system
 [params.comments]
-enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
+  enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
 
 # Another comments system that using github discussion. See detail in https://giscus.app
 # Conflict with Disqus
 # TODO: auto change light/dark theme when the whole site is setting auto-theme
 [params.giscus]
-enable = true
-repo = "2kabhishek/neonote"
-repoID = "some-repo-id"
-category = "Announcements"
-categoryID = "some-category-id"
-dataTheme = "dark"
-dataLang = "en"
+  enable = true
+  repo = "2kabhishek/neonote"
+  repoID = "some-repo-id"
+  category = "Announcements"
+  categoryID = "some-category-id"
+  dataTheme = "dark"
+  dataLang = "en"
 
 [params.math]
-enable = false # load math globally, default: false. You can always enable math on per page.
-use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
+  enable = false # load math globally, default: false. You can always enable math on per page.
+  use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
 
 [taxonomies]
   category = "categories"
@@ -108,21 +108,21 @@ use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
   search = "search"
 
 [[params.nav.custom]]
-title = "Tags"
-url = "/tags/"
+  title = "Tags"
+  url = "/tags/"
 
 [[params.nav.custom]]
-title = "Archives"
-url = "/archives/"
+  title = "Archives"
+  url = "/archives/"
 
 [[params.nav.custom]]
-title = "Search"
-url = "/search/"
+  title = "Search"
+  url = "/search/"
 
 [[params.nav.custom]]
-title = "About"
-url = "/about/"
+  title = "About"
+  url = "/about/"
 
 [[params.nav.custom]]
-title = "Hugo"
-url = "https://gohugo.io/"
+  title = "Hugo"
+  url = "https://gohugo.io/"
