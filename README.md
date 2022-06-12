@@ -122,7 +122,7 @@ theme = "neonote"
 
 Almost everything can be configured in the `config.toml` file of your site. If you want to modify the theme, you could go to [Customize theme](#customize-theme)
 
-Check the [example-config.toml](./example-config.toml) file for more details.
+Check the [example-config.toml](./example-config.toml) or [config.toml](./exampleSite/config.toml) file for more details.
 
 ## Update theme
 
