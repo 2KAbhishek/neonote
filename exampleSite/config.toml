@@ -36,44 +36,13 @@ enableRobotsTXT = true
 [outputs]
   home = ["HTML", "RSS", "TOML"]
 
-[minify]
-# Need Hugo version v0.68.0+
-# Newer Hugo version may fix some minify issues. So if you want to use this function, use latest Hugo for a better experience.
-  disableCSS = false
-  disableHTML = false
-  disableJS = false
-  disableJSON = false
-  disableSVG = true
-  disableXML = false
-  minifyOutput = true
-  [minify.tdewolff]
-    [minify.tdewolff.css]
-      keepCSS2 = true
-      precision = 1
-    [minify.tdewolff.html]
-      keepComments = false
-      keepConditionalComments = true
-      keepDefaultAttrVals = true
-      keepDocumentTags = true
-      keepEndTags = true
-      keepQuotes = false
-      keepWhitespace = false
-    [minify.tdewolff.js]
-      keepVarNames = false
-      precision = 1
-    [minify.tdewolff.json]
-      precision = 0
-    [minify.tdewolff.svg]
-      precision = 1
-    [minify.tdewolff.xml]
-      keepWhitespace = false
-
 [params]
-style = "auto"  # default: auto. light: light theme, dark: dark theme, auto: based on system.
-logo = ""
-keywords = "blog, theme, minimalist"
-description = "Hugo neonote theme, a minimalist theme for bloggers"
-author = "2kabhishek"
+  style = "auto"
+  logo = ""
+  keywords = "blog, theme, minimalist"
+  description = "Hugo neonote theme, a minimalist theme for bloggers"
+  author = "2kabhishek"
+  slogan = "A minimalist theme for bloggers"
 
 ShowOutdatedOnPosts = true  # Add a prompt box before a post if the post published long ago
 OutdatedDays = 730  # Collaborate with preceding params. If a post is edited before this params,
@@ -126,3 +95,33 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
 [[params.nav.custom]]
   title = "Hugo"
   url = "https://gohugo.io/"
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = true
+  disableXML = false
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      keepCSS2 = true
+      precision = 1
+    [minify.tdewolff.html]
+      keepComments = false
+      keepConditionalComments = true
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = false
+      keepWhitespace = false
+    [minify.tdewolff.js]
+      keepVarNames = false
+      precision = 1
+    [minify.tdewolff.json]
+      precision = 0
+    [minify.tdewolff.svg]
+      precision = 1
+    [minify.tdewolff.xml]
+      keepWhitespace = false
