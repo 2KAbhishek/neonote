@@ -1,6 +1,6 @@
 <div align = "center">
 
-<h1><a href="https://2kabhishek.github.io/neonote">neonote</a></h1>
+<h1><a href="https://2kabhishek.github.io/neonote">Neonote</a></h1>
 
 <a href="https://github.com/2KAbhishek/neonote/blob/main/LICENSE">
 <img alt="License" src="https://img.shields.io/github/license/2kabhishek/neonote?style=plastic&color=white&label=License"> </a>
@@ -23,7 +23,7 @@
 <a href="https://github.com/2KAbhishek?tab=followers">
 <img alt="Followers" src="https://img.shields.io/github/followers/2kabhishek?color=222&style=plastic&label=Followers"> </a>
 
-<h3>Short sweet headline with 🎇🎉</h3>
+<h3>Hugo Theme for Minimalists 🎨✒️</h3>
 
 <figure>
   <img src= "images/screenshot.jpg" alt="neonote Demo" style="width:100%">
@@ -63,7 +63,7 @@ I needed a theme for my blog, that's all :)
 * [hugo modules](https://gohugo.io/categories/hugo-modules)
 * archive page
 * light & dark theme toggle button
-* search in site (powered by [stork](https://github.com/jameslittle230/stork)) [How to use it?]()
+* search in site (powered by [stork](https://github.com/jameslittle230/stork))
 * more useful Hugo shortcodes
   * tips blocks(alert messages)
   * plist for simple table in markdown
@@ -211,7 +211,7 @@ description = "2KAbhishek's blog"
 style = "auto"  # default: auto. light: light theme, dark: dark theme, auto: based on system.
 logo = "https://avatars.githubusercontent.com/u/25423853?v=4"
 slogan = ""
-#license = "<a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt=Creative Commons License style=border-width:0 src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png /></a><br />This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>."
+license = "<a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt=Creative Commons License style=border-width:0 src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png /></a><br />This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>."
 
 # If you use custom css files, declare them here
 [params.assets]
