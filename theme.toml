@@ -9,10 +9,7 @@ homepage = "https://2kabhishek.github.io/neonote/"
 tags = ["blog", "theme", "minimalist"]
 features = ["MathJax", "HighlightJS", "PrismJS"]
 min_version = "0.60.0"
-languageCode = "en-us"
-copyright = "2023 2KAbhishek All rights reserved"
 
 [author]
   name = "2kabhishek"
-  email = "iam2kabhishek@gmail.com"
   homepage = "https://2kabhishek.github.io/"
