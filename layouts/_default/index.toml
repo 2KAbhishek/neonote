@@ -8,5 +8,3 @@ title = "{{ .Title }}"
 {{ end }}
 {{- end -}}
 {{- end -}}
-[output]
-filename = "public/stork-posts.st"

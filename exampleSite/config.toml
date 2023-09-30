@@ -65,26 +65,21 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
   enable = false # load math globally, default: false. You can always enable math on per page.
   use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
 
+[params.nav]
+  showCategories = false
+  showTags = true
+
 [taxonomies]
   category = "categories"
   tag = "tags"
-  search = "search"
-
-[[params.nav.custom]]
-  title = "Tags"
-  url = "/tags/"
 
 [[params.nav.custom]]
   title = "Archives"
-  url = "/archives/"
-
-[[params.nav.custom]]
-  title = "Search"
-  url = "/search/"
+  url = "archives/"
 
 [[params.nav.custom]]
   title = "About"
-  url = "/about/"
+  url = "about/"
 
 [[params.nav.custom]]
   title = "Hugo"
