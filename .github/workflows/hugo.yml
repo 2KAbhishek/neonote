@@ -49,12 +49,7 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: |
-          hugo \
-            --minify -s exampleSite \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Build Stork Search
-        run: bash ./build_search.sh
+        run: bash ./build.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
