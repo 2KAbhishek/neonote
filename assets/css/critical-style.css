@@ -26,6 +26,7 @@ html[data-theme="dark"] img {
 
 html {
   background: #eeeeee;
+  --background-color: #eeeeee;
   --site-name-color: #0a0a0f;
   --color-primary: #1688f0;
   --link-underline: #90cff9;
@@ -38,7 +39,8 @@ html {
 }
 
 html[data-theme="dark"] {
-  background: #0a0a0f;
+  background: #000;
+  --background-color: #0a0a0f;
   --site-name-color: #eeeeee;
   --color-primary: #1688f0;
   --link-underline: #0051a2;
@@ -323,4 +325,12 @@ ul.archive-list li {
 .pagination ul li a.active {
   background-color: var(--color-primary);
   color: var(--block-background-color);
+}
+
+input {
+  background-color: var(--background-color) !important;
+}
+
+input:focus {
+    border-color: var(--color-primary);
 }
