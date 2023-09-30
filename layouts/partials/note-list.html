@@ -1,8 +1,9 @@
+{{ partial "search.html" }}
+
 {{- $paginator := . -}}
 
 {{- if gt $paginator.TotalPages 0 -}}
 <ul class="note-list">
-    {{ partial "search.html" }}
     {{- range $paginator.Pages -}}
     {{- if not .Params.hidden -}}
     <li class="item"><a class="note" href="{{- .RelPermalink -}}">
