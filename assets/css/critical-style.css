@@ -327,10 +327,15 @@ ul.archive-list li {
   color: var(--block-background-color);
 }
 
-input {
+input, .stork-message, .stork-result, .stork-title, .stork-excerpt {
   background-color: var(--background-color) !important;
+  color: var(--site-name-color) !important;
 }
 
 input:focus {
-    border-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.stork-attribution {
+  display: none !important;
 }
