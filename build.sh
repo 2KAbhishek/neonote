@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-wget https://files.stork-search.net/releases/latest/stork-ubuntu-latest
-chmod +x stork-ubuntu-latest
+wget https://github.com/jameslittle230/stork/releases/download/v1.6.0/stork-ubuntu-20-04
+chmod +x stork-ubuntu-20-04
 hugo --gc --minify -s exampleSite
-./stork-ubuntu-latest --build exampleSite/public/index.toml
+./stork-ubuntu-20-04 --build exampleSite/public/index.toml
