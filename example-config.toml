@@ -13,9 +13,6 @@ enableEmoji = true
 # Enable Disqus
 #disqusShortname = "XXX"
 
-# Google Analytics
-#googleAnalytics = "UA-123-45"
-
 [module]
   [[module.imports]]
     path = "github.com/2kabhishek/neonote"
