@@ -29,7 +29,7 @@
         {{- if or .Params.categories .Params.tags -}}
             <p class="note-labels">
                 {{- range .Params.tags -}}
-                {{- $url := print "/tags/" ( . | urlize) "/" -}}
+                {{- $url := print "tags/" ( . | urlize) "/" -}}
                 <a class="article-tag" href="{{- $url | relURL -}}"><span class="hashtag">#</span>{{- . -}}</a>
                 {{- end -}}
             </p>
