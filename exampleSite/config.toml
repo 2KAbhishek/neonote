@@ -75,11 +75,11 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
 
 [[params.nav.custom]]
   title = "Archives"
-  url = "archives/"
+  url = "/neonote/archives"
 
 [[params.nav.custom]]
   title = "About"
-  url = "about/"
+  url = "/neonote/about"
 
 [[params.nav.custom]]
   title = "Hugo"
