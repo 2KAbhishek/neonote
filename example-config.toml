@@ -1,17 +1,19 @@
 baseURL = "https://2kabhishek.github.io/blog/"
 title = "2KAbhishek Blogs"
-copyright = "©2022 2KAbhishek"
+copyright = "©2024 2KAbhishek"
 
 languageCode = "en"
 hasCJKLanguage = true
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
-paginate = 7  # number of articles per page
+[pagination]
+  pagerSize = 7  # number of articles per page
 enableEmoji = true
 
 # Enable Disqus
-#disqusShortname = "XXX"
+# [config.services.disqus]
+#   shortname = "2kabhishek"
 
 [module]
   [[module.imports]]
