@@ -2,7 +2,7 @@ baseURL = "https://2kabhishek.github.io/neonote/"
 title = "Neonote"
 theme = "neonote"
 themesdir = "../.."
-copyright = "©2022 Neonote"
+copyright = "©2024 Neonote"
 
 languageCode = "en"  # for the rss generation. See https://github.com/gohugoio/hugo/issues/349
 defaultContentLanguage = "en"  # for the site language. Use Hugo i18n configuration
@@ -34,17 +34,19 @@ enableRobotsTXT = true
 [outputs]
   home = ["HTML", "RSS", "TOML"]
 
+[params.author]
+  name = "2kabhishek"
+  email = "iam2kabhishek@gmail.com"
+
 [params]
   style = "auto"
   logo = ""
   keywords = "blog, theme, minimalist"
   description = "Hugo neonote theme, a minimalist theme for bloggers"
-  author = "2kabhishek"
   slogan = "A minimalist theme for bloggers"
 
 ShowOutdatedOnPosts = true  # Add a prompt box before a post if the post published long ago
-OutdatedDays = 730  # Collaborate with preceding params. If a post is edited before this params,
-	       	    # a prompt box will appear before the post
+OutdatedDays = 730  # Collaborate with preceding params. If a post is edited before this params, a prompt box will appear before the post
 
 # Disqus comments system
 [params.comments]
