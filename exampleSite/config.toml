@@ -11,7 +11,8 @@ hasCJKLanguage = true
 enableRobotsTXT = true
 
 # Enable Disqus
-  #disqusShortname = "XXX"
+[config.services.disqus]
+  shortname = "2kabhishek"
 
 [markup.highlight]
   codeFences = true

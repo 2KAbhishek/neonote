@@ -1,4 +1,4 @@
-{{- if gt (len .Site.DisqusShortname) 0 -}}
+{{- if gt (len .Site.Config.Services.Disqus.Shortname) 0 -}}
     {{- if or (eq .Params.comments true) (and (ne .Params.comments false) (eq .Site.Params.comments.enable true)) -}}
         <section class="article-discussion">
             {{- template "_internal/disqus.html" . -}}
