@@ -64,6 +64,13 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
   dataTheme = "dark"
   dataLang = "en"
 
+[params.utterances]
+  enable = true
+  repo = "2kabhishek/neonote"
+  issueTerm = "pathname"
+  theme = "preferred-color-scheme"
+  crossorigin = "anonymous"
+
 [params.math]
   enable = false # load math globally, default: false. You can always enable math on per page.
   use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
