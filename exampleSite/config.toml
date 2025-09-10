@@ -10,7 +10,7 @@ hasCJKLanguage = true
 
 enableRobotsTXT = true
 
-# Enable Disqus
+# will be removed in the future
 [config.services.disqus]
   shortname = "2kabhishek"
 
@@ -48,9 +48,12 @@ enableRobotsTXT = true
 ShowOutdatedOnPosts = true  # Add a prompt box before a post if the post published long ago
 OutdatedDays = 730  # Collaborate with preceding params. If a post is edited before this params, a prompt box will appear before the post
 
-# Disqus comments system
 [params.comments]
-  enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
+  enable = true  # global switch of comment system
+
+[params.disqus]
+  enable = false  # En/Disable Disqus comments globally, default: false. You can always enable comments on per page.
+  shortname = "2kabhishek"
 
 # Another comments system that using github discussion. See detail in https://giscus.app
 # Conflict with Disqus
