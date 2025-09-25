@@ -10,10 +10,6 @@ hasCJKLanguage = true
 
 enableRobotsTXT = true
 
-# Enable Disqus
-[config.services.disqus]
-  shortname = "2kabhishek"
-
 [markup.highlight]
   codeFences = true
   guessSyntax = true
@@ -48,15 +44,17 @@ enableRobotsTXT = true
 ShowOutdatedOnPosts = true  # Add a prompt box before a post if the post published long ago
 OutdatedDays = 730  # Collaborate with preceding params. If a post is edited before this params, a prompt box will appear before the post
 
-# Disqus comments system
-[params.comments]
-  enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
-
-# Another comments system that using github discussion. See detail in https://giscus.app
-# Conflict with Disqus
 # TODO: auto change light/dark theme when the whole site is setting auto-theme
+
+[params.global_comments]
+  enable = true     # comment system switch
+  comment_system = "disqus" # or giscus, utterances
+
+# Configure the appropriate setting based on the comment system you choose
+[params.disqus]
+  shortname = "2kabhishek"
+
 [params.giscus]
-  enable = true
   repo = "2kabhishek/neonote"
   repoID = "some-repo-id"
   category = "Announcements"
@@ -65,7 +63,6 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
   dataLang = "en"
 
 [params.utterances]
-  enable = true
   repo = "2kabhishek/neonote"
   issueTerm = "pathname"
   theme = "preferred-color-scheme"

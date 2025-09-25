@@ -1,29 +1,35 @@
-{{- if or (eq .Params.utterances true) (and (ne .Params.utterances false) (eq .Site.Params.utterances.enable true)) -}}
-<script src="https://utteranc.es/client.js"
-        repo="{{ .Site.Params.utterances.repo }}"
-        issue-term="{{ .Site.Params.utterances.issueTerm }}"
-        theme="{{ .Site.Params.utterances.theme }}"
-        crossorigin="anonymous"
-        async>
-</script>
-{{- else if gt (len .Site.Config.Services.Disqus.Shortname) 0 -}}
-    {{- if or (eq .Params.comments true) (and (ne .Params.comments false) (eq .Site.Params.comments.enable true)) -}}
-        <section class="article-discussion">
-            {{- template "_internal/disqus.html" . -}}
-        </section>
-    {{- end -}}
-{{- else if or (eq .Params.giscus true) (and (ne .Params.giscus false) (eq .Site.Params.giscus.enable true)) -}}
-<script src="https://giscus.app/client.js"
-        data-repo={{ .Site.Params.giscus.repo }}
-        data-repo-id={{ .Site.Params.giscus.repoID }}
-        data-category={{ .Site.Params.giscus.category }}
-        data-category-id={{ .Site.Params.giscus.categoryID }}
-        data-mapping="title"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-theme={{ .Site.Params.giscus.dataTheme }}
-        data-lang={{ .Site.Params.giscus.dataLang }}
-        crossorigin="anonymous"
-        async>
-</script>
-{{- end -}}
+{{- $globalComments := .Site.Params.global_comments.enable | default false -}}
+{{- $pageComments := .Params.comments | default true -}}
+{{- $system := .Site.Params.global_comments.comment_system | default "" -}}
+
+{{- if and $globalComments $pageComments }}
+    <section class="article-discussion">
+        {{- if eq $system "disqus" }}
+            {{- if .Site.Params.disqus.shortname }}
+                {{- template "_internal/disqus.html" . -}}
+            {{- end }}
+        {{- else if eq $system "giscus" }}
+        <script src="https://giscus.app/client.js"
+                data-repo={{ .Site.Params.giscus.repo }}
+                data-repo-id={{ .Site.Params.giscus.repoID }}
+                data-category={{ .Site.Params.giscus.category }}
+                data-category-id={{ .Site.Params.giscus.categoryID }}
+                data-mapping="title"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-theme={{ .Site.Params.giscus.dataTheme }}
+                data-lang={{ .Site.Params.giscus.dataLang }}
+                crossorigin="anonymous"
+                async>
+        </script>
+        {{- else if eq $system "utterances" }}
+        <script src="https://utteranc.es/client.js"
+                repo={{ .Site.Params.utterances.repo }}
+                issue-term={{ .Site.Params.utterances.issueTerm }}
+                theme={{ .Site.Params.utterances.theme }}
+                crossorigin="anonymous"
+                async>
+        </script>
+        {{- end }}
+    </section>
+{{- end}}
