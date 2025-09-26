@@ -6,6 +6,7 @@ aliases = ["about-us","about-hugo","contact"]
 type = "about"
 layout = "about"
 hidden = true
+comments = false
 author = "Hugo Authors"
 +++
 
