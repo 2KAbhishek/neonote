@@ -9,7 +9,7 @@
                 {{- template "_internal/disqus.html" . -}}
             {{- end }}
         {{- else if eq $system "giscus" }}
-        <script src="https://giscus.app/client.js"
+            <script src="https://giscus.app/client.js"
                 data-repo={{ .Site.Params.giscus.repo }}
                 data-repo-id={{ .Site.Params.giscus.repoID }}
                 data-category={{ .Site.Params.giscus.category }}
@@ -19,17 +19,17 @@
                 data-emit-metadata="0"
                 data-theme={{ .Site.Params.giscus.dataTheme }}
                 data-lang={{ .Site.Params.giscus.dataLang }}
-                crossorigin="anonymous"
+				crossorigin={{ .Site.Params.giscus.crossorigin }}
                 async>
-        </script>
+            </script>
         {{- else if eq $system "utterances" }}
-        <script src="https://utteranc.es/client.js"
+            <script src="https://utteranc.es/client.js"
                 repo={{ .Site.Params.utterances.repo }}
                 issue-term={{ .Site.Params.utterances.issueTerm }}
                 theme={{ .Site.Params.utterances.theme }}
-                crossorigin="anonymous"
+                crossorigin={{ .Site.Params.utterances.crossorigin }}
                 async>
-        </script>
+            </script>
         {{- end }}
     </section>
 {{- end}}

@@ -61,6 +61,7 @@ OutdatedDays = 730  # Collaborate with preceding params. If a post is edited bef
   categoryID = "some-category-id"
   dataTheme = "dark"
   dataLang = "en"
+  crossorigin = "anonymous"
 
 [params.utterances]
   repo = "2kabhishek/neonote"
