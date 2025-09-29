@@ -1,10 +1,40 @@
 <section id="footer" class="footer max-body-width">
-    {{- $copyright := .Site.Copyright -}}
-    {{- if not $copyright -}}
-        {{- $copyright = .Site.Title | safeHTML -}}
-    {{- end -}}
-    {{- $fullCopyright := printf "©%s %s" (now.Format "2006") $copyright -}}
-    {{- partial "copyright.html" ($fullCopyright | safeHTML) -}}
+  {{- $copyright := .Site.Copyright -}}
+  {{- if not $copyright -}}
+    {{- $copyright = .Site.Title | safeHTML -}}
+  {{- end -}}
+  {{- $fullCopyright := printf "©%s %s" (now.Format "2006") $copyright -}}
+  <div class="footer-wrap"><p class="copyright">{{- $fullCopyright -}}</p></div>
+  <div class="footer-wrap">
+    <p class="powerby">
+      💙 Powered by
+      <a
+        href="https://github.com/2kabhishek/neonote"
+        target="_blank"
+        rel="noopener"
+        >Neonote</a
+      >
+      💙
+    </p>
+  </div>
+  <div class="footer-wrap">
+    <a
+      style="text-decoration: none"
+      href="#"
+      onclick='window.scrollTo({top: 0, behavior: "smooth"});'
+    >
+      Go to Top
+    </a>
+    |
+    <a
+      style="text-decoration: none"
+      href="{{ .Site.BaseURL }}index.xml"
+      target="_blank"
+      rel="noopener"
+    >
+      RSS Feed</a
+    >
+  </div>
 </section>
 {{- partial "math.html" . -}}
 {{- partial "syntax.html" . -}}
