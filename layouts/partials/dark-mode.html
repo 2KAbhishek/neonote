@@ -1,21 +1,20 @@
 <script>
   const htmlEl = document.getElementsByTagName('html')[0];
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-  if (currentTheme) {
-    htmlEl.dataset.theme = currentTheme;
-  }
   const toggleTheme = (theme) => {
     htmlEl.dataset.theme = theme;
     localStorage.setItem('theme', theme);
   }
-  if (
-    localStorage.getItem('theme') === 'dark' ||
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    htmlEl.dataset.theme = 'dark';
+
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme) {
+    htmlEl.dataset.theme = savedTheme;
   } else {
-    toggleTheme('light');
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      toggleTheme('dark');
+    } else {
+      toggleTheme('light');
+    }
   }
 </script>
 
