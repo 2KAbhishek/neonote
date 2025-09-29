@@ -7,7 +7,10 @@ pre {
   margin: 8px 0;
   word-wrap: normal;
   white-space: pre;
-  border-radius: 3px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #333;
+  background-color: #0a0a0f !important;
   -o-tab-size: 4;
   -moz-tab-size: 4;
   tab-size: 4;
