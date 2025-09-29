@@ -14,7 +14,7 @@ enableRobotsTXT = true
   codeFences = true
   guessSyntax = true
   noClasses = true
-  style = "dracula"
+  style = "onedark"
 
 [markup.goldmark.renderer]
   unsafe = true  # enable raw HTML in Markdown
