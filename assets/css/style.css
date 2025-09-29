@@ -246,15 +246,13 @@ table {
   align-self: start;
   padding: 10px;
   font-size: 14px;
-  margin-right: 10px;
-  background-color: var(--block-background-color);
   box-shadow: var(--box-shadow);
   max-height: 85vh;
   overflow-y: auto;
 }
 
 .toc-title {
-  text-align: center;
+  text-align: left;
   font-size: 20px;
   padding-bottom: 10px;
   color: var(--title-color);
@@ -286,7 +284,7 @@ nav ul li a:focus {
   color: var(--title-color);
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .toc {
     display: none;
   }
