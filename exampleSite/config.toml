@@ -2,7 +2,7 @@ baseURL = "https://2kabhishek.github.io/neonote/"
 title = "Neonote"
 theme = "neonote"
 themesdir = "../.."
-copyright = "©2024 Neonote"
+copyright = "Neonote"
 
 languageCode = "en"  # for the rss generation. See https://github.com/gohugoio/hugo/issues/349
 defaultContentLanguage = "en"  # for the site language. Use Hugo i18n configuration

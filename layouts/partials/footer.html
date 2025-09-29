@@ -3,7 +3,8 @@
     {{- if not $copyright -}}
         {{- $copyright = .Site.Title | safeHTML -}}
     {{- end -}}
-    {{- partial "copyright.html" ($copyright | safeHTML) -}}
+    {{- $fullCopyright := printf "©%s %s" (now.Format "2006") $copyright -}}
+    {{- partial "copyright.html" ($fullCopyright | safeHTML) -}}
 </section>
 {{- partial "math.html" . -}}
 {{- partial "syntax.html" . -}}
