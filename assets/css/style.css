@@ -286,7 +286,7 @@ nav ul li a:focus {
   color: var(--title-color);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1600px) {
   .toc {
     display: none;
   }
