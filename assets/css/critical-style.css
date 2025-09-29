@@ -99,6 +99,18 @@ a:hover {
   grid-column: 2;
 }
 
+@media (min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr min(120ch, calc(100% - 64px)) 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .wrapper {
+    grid-template-columns: 1fr min(90ch, calc(100% - 64px)) 1fr;
+  }
+}
+
 .header {
   margin: 20px 0;
   display: -webkit-flex;
