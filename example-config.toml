@@ -6,14 +6,13 @@ languageCode = "en"
 hasCJKLanguage = true
 defaultContentLanguage = "en"
 
+theme = "neonote"
+
 enableRobotsTXT = true
-[pagination]
-  pagerSize = 7  # number of articles per page
 enableEmoji = true
 
-# Enable Disqus
-# [config.services.disqus]
-#   shortname = "2kabhishek"
+[pagination]
+  pagerSize = 7  # number of articles per page
 
 [module]
   [[module.imports]]
@@ -34,8 +33,27 @@ enableEmoji = true
 [params.assets]
   css = ["css/fonts.css", "css/custom.css"]
 
-[params.comments]
-  enable = false  # En/Disable comments, You can also enable comments on per page.
+[params.global_comments]
+  enable = true     # En/Disable comments, You can also enable comments on per page.
+  comment_system = "disqus" # or giscus, utterances
+
+# Configure the appropriate setting based on the comment system you choose
+[params.disqus]
+  shortname = "2kabhishek"
+
+[params.giscus]
+  repo = "2kabhishek/neonote"
+  repoID = "some-repo-id"
+  category = "Announcements"
+  categoryID = "some-category-id"
+  dataTheme = "dark"
+  dataLang = "en"
+
+[params.utterances]
+  repo = "2kabhishek/neonote"
+  issueTerm = "pathname"
+  theme = "preferred-color-scheme"
+  crossorigin = "anonymous"
 
 [params.math]
   enable = false # Load math globally, You can also enable math on per page.
