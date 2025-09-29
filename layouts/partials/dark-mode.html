@@ -10,10 +10,10 @@
   if (savedTheme) {
     htmlEl.dataset.theme = savedTheme;
   } else {
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      toggleTheme('dark');
-    } else {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
       toggleTheme('light');
+    } else {
+      toggleTheme('dark');
     }
   }
 </script>
