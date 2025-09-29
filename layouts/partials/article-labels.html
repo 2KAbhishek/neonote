@@ -5,8 +5,10 @@
     <!-- <a class="article-category li" href={{- $url | relURL -}}><span class="hashtag">#</span>{{- . -}}</a> -->
     <!-- {{- end -}} -->
     {{- range .Params.tags -}}
-    {{- $url := print "/tags/" ( . | urlize) "/" -}}
-    <a class="article-tag li" href={{- $url | relURL -}}><span class="hashtag">#</span>{{- . -}}</a>
+    {{- $tagName := . -}}
+    {{- with $.Site.GetPage "taxonomy" (printf "tags/%s" (. | urlize)) -}}
+    <a class="article-tag li" href="{{ .Permalink }}"><span class="hashtag">#</span>{{- $tagName -}}</a>
+    {{- end -}}
     {{- end -}}
 </section>
 {{- end -}}
