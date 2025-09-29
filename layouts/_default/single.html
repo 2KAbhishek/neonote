@@ -17,28 +17,7 @@
 {{- partial "article-labels.html" . -}}
 
 {{- if .Site.Params.ShowOutdatedOnPosts -}}
-{{- if gt $ageDays .Site.Params.OutdatedDays -}}
-<style type="text/css" media="screen">
-  html {
-    --blockquote-border: 2px solid #0051a2;
-  }
-  html[data-theme='dark'] {
-    --blockquote-border: 2px solid #5176bf;
-  }
-  .outdated-prompt-box {
-    text-align: center;
-    background-color: var(--block-background-color);
-    border: var(--blockquote-border);
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: var(--body-color);
-  }
-</style>
-<div class="outdated-prompt-box">
-  <p>{{- i18n "published-before" | safeHTML -}} {{ $ageDays }} {{- i18n "published-after" | safeHTML -}}<br> {{- i18n "outdated-prompt" | safeHTML -}}</p>
-</div>
-{{- end -}}
+{{- partial "outdated-warning.html" (dict "ageDays" $ageDays "context" .) -}}
 {{- end -}}
 
 <article class="markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
