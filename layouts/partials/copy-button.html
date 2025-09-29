@@ -1,0 +1,66 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const codeBlocks = document.querySelectorAll('pre code');
+
+    codeBlocks.forEach(function (codeBlock) {
+      const pre = codeBlock.parentElement;
+
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-btn';
+      copyButton.textContent = 'Copy';
+      copyButton.setAttribute('aria-label', 'Copy code to clipboard');
+
+      copyButton.addEventListener('click', async function () {
+        try {
+          await navigator.clipboard.writeText(codeBlock.textContent);
+          copyButton.textContent = 'Copied!';
+          copyButton.classList.add('copied');
+
+          setTimeout(function () {
+            copyButton.textContent = 'Copy';
+            copyButton.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          copyButton.textContent = 'Failed';
+          setTimeout(function () {
+            copyButton.textContent = 'Copy';
+          }, 2000);
+        }
+      });
+
+      pre.style.position = 'relative';
+      pre.appendChild(copyButton);
+    });
+  });
+</script>
+
+<style>
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+  }
+
+  pre:hover .copy-btn {
+    opacity: 1;
+  }
+
+  .copy-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .copy-btn.copied {
+    background: #00ff00;
+    color: black;
+  }
+</style>
