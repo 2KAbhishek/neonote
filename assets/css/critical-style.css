@@ -205,7 +205,7 @@ html[data-theme="dark"] .dark-hidden {
   display: inline-block;
   font-size: 15px;
   line-height: 1;
-  padding: 4px 6px;
+  padding-right: 6px;
   margin: 2px 3px 2px 0;
   white-space: nowrap;
   border-radius: 3px;
