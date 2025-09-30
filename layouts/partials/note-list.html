@@ -11,7 +11,7 @@
             <p class="note-title">{{- .Title | safeHTML -}}</p>
         </a>
             {{- if .Date -}}<p class="note-date">{{- .Date.Format "2006-01-02" -}}</p>{{- end -}}
-            {{- if .Summary -}}<p class="note-content">{{- .Summary | plainify | safeHTML | truncate 120 -}}</p>{{- end -}}
+            {{- if .Summary -}}<p class="note-content">{{- .Summary | plainify | safeHTML | truncate (default 120 .Site.Params.summaryLength) -}}</p>{{- end -}}
             {{- $relURL := .RelPermalink -}}
             {{- $imgs := .Params.imgs -}}
             {{- with .Params.imgs -}}

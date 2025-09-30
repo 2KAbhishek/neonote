@@ -5,6 +5,7 @@ copyright = "©2024 2KAbhishek"
 languageCode = "en"
 hasCJKLanguage = true
 defaultContentLanguage = "en"
+summaryLength = 120  # Number of characters to show in post summaries on list pages
 
 theme = "neonote"
 
@@ -12,7 +13,7 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [pagination]
-  pagerSize = 7  # number of articles per page
+  pagerSize = 8  # number of articles per page
 
 [module]
   [[module.imports]]
