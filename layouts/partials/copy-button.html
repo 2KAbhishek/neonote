@@ -28,39 +28,15 @@
         }
       });
 
+      const updateButtonPosition = function() {
+        const scrollLeft = pre.scrollLeft;
+        copyButton.style.transform = `translateX(${scrollLeft}px)`;
+      };
+
+      pre.addEventListener('scroll', updateButtonPosition);
+
       pre.style.position = 'relative';
       pre.appendChild(copyButton);
     });
   });
 </script>
-
-<style>
-  .copy-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    z-index: 1;
-  }
-
-  pre:hover .copy-btn {
-    opacity: 1;
-  }
-
-  .copy-btn:hover {
-    background: rgba(0, 0, 0, 0.9);
-  }
-
-  .copy-btn.copied {
-    background: #00ff00;
-    color: black;
-  }
-</style>
