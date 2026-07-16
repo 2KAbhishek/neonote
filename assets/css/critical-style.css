@@ -483,11 +483,14 @@ input, .stork-message, .stork-result, .stork-title, .stork-excerpt {
 
 .stork-wrapper .stork-input,
 .stork-wrapper .stork-input:focus {
+  border: 1px solid rgba(22, 136, 240, 0.35) !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
 .stork-wrapper .stork-highlight {
-  background-color: transparent !important;
+  background-color: rgba(22, 136, 240, 0.3) !important;
+  color: #0b1f33 !important;
 }
 
 input:-webkit-autofill,
