@@ -22,5 +22,23 @@
 <script src="https://files.stork-search.net/releases/v1.6.0/stork.js"></script>
 <script>
     stork.register('posts', 'posts.st');
+
+    document.addEventListener('keydown', (e) => {
+        const filterInput = document.querySelector('.stork-input');
+        if (!filterInput) return;
+
+        const isInput = document.activeElement.tagName === 'INPUT' || 
+                        document.activeElement.tagName === 'TEXTAREA';
+
+        if (e.key === '/' && !isInput) {
+            e.preventDefault();
+            filterInput.focus();
+        }
+        if (e.key === 'Escape' && document.activeElement === filterInput) {
+            filterInput.value = '';
+            filterInput.dispatchEvent(new Event('input'));
+            filterInput.blur();
+        }
+    });
 </script>
 </section>
