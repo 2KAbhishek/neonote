@@ -3,6 +3,18 @@
     rel="stylesheet"
     href="https://files.stork-search.net/releases/v1.6.0/basic.css"
 />
+<style>
+    .stork-wrapper .stork-input,
+    .stork-wrapper .stork-input:focus {
+        border: 1px solid rgba(22, 136, 240, 0.35) !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .stork-wrapper .stork-highlight {
+        background-color: transparent !important;
+    }
+</style>
 <div class="stork-wrapper">
     <input data-stork="posts" class="stork-input" placeholder="Search" />
     <div data-stork="posts-output" class="stork-output"></div>

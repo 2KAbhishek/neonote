@@ -167,6 +167,8 @@ html[data-theme="dark"] .dark-hidden {
 }
 
 .note-list {
+  display: grid;
+  gap: 18px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -174,11 +176,17 @@ html[data-theme="dark"] .dark-hidden {
 
 .note-list .item {
   position: relative;
-  margin-top: 25px;
+  padding: 18px 20px;
+  border: 1px solid rgba(22, 136, 240, 0.35);
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.note-list .item:last-child {
-  border: 0 !important;
+.note-list .item:hover {
+  border-color: rgba(22, 136, 240, 0.35);
+  transform: translateY(-2px);
 }
 
 .note-title {
@@ -336,8 +344,27 @@ input, .stork-message, .stork-result, .stork-title, .stork-excerpt {
   color: var(--site-name-color) !important;
 }
 
+.stork-wrapper .stork-input,
+.stork-wrapper .stork-input:focus {
+  box-shadow: none !important;
+}
+
+.stork-wrapper .stork-highlight {
+  background-color: transparent !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--site-name-color) !important;
+  box-shadow: 0 0 0 1000px var(--background-color) inset !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 input:focus {
   border-color: var(--color-primary) !important;
+  box-shadow: none !important;
+  outline-color: var(--color-primary) !important;
 }
 
 .stork-attribution {
