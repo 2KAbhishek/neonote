@@ -489,8 +489,13 @@ input, .stork-message, .stork-result, .stork-title, .stork-excerpt {
 }
 
 .stork-wrapper .stork-highlight {
-  background-color: rgba(22, 136, 240, 0.3) !important;
-  color: #0b1f33 !important;
+  background-color: rgba(22, 136, 240, 0.35) !important;
+  color: inherit !important;
+  border-radius: 2px;
+}
+
+html[data-theme="dark"] .stork-wrapper .stork-highlight {
+  background-color: rgba(22, 136, 240, 0.55) !important;
 }
 
 input:-webkit-autofill,
