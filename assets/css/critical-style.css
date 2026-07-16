@@ -158,7 +158,7 @@ html[data-theme="dark"] .dark-hidden {
 }
 
 .note-list-wrapper {
-  max-width: min(clamp(60ch, 75vw, 84ch), calc(100% - 32px));
+  max-width: min(clamp(60ch, 75vw, 90ch), calc(100% - 32px));
   margin: 0 auto;
   width: 100%;
 }

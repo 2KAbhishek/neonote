@@ -1,10 +1,10 @@
 <section id="header" class="header">
   <div class="header-left">
-    <a href="{{ .Site.BaseURL }}">
+    <a href="{{ site.Home.RelPermalink }}">
       {{- $logo := .Site.Params.logo -}} {{- if $logo -}}
-      <img class="site-logo" src="{{- $logo | relURL -}}" alt />
+      <img class="site-logo" src="{{- $logo | relURL -}}" alt="{{ site.Title }} logo" />
       {{- end -}}
-      <p class="site-name">{{- .Site.Title -}}</p>
+      <p class="site-name">{{- site.Title -}}</p>
     </a>
     {{- with .Site.Params.slogan -}}
     <div class="site-slogan">

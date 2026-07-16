@@ -44,7 +44,7 @@ enableRobotsTXT = true
   description = "Hugo neonote theme, a minimalist theme for bloggers"
   slogan = "A minimalist theme for bloggers"
 
-ShowOutdatedOnPosts = true  # Add a prompt box before a post if the post published long ago
+ShowOutdatedOnPosts = false  # Add a prompt box before a post if the post published long ago
 OutdatedDays = 730  # Collaborate with preceding params. If a post is edited before this params, a prompt box will appear before the post
 summaryLength = 120  # Number of characters to show in post summaries on list pages
 

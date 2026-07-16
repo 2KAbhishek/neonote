@@ -1,59 +1,77 @@
-{{- define "main" -}}
-{{- $justify := false -}}
-{{- $date := .Date.Format "2006-01-02" -}}
-{{- $lastmod := .Lastmod.Format "2006-01-02" -}}
-{{- $ageDays := div (sub now.Unix .Lastmod.Unix) 86400 -}}
-{{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
+{{- define "main" -}} {{- $justify := false -}} {{- $date := .Date.Format
+"2006-01-02" -}} {{- $lastmod := .Lastmod.Format "2006-01-02" -}} {{- $ageDays
+:= div (sub now.Unix .Lastmod.Unix) 86400 -}} {{- if eq .Params.justify true -}}
+{{- $justify = true -}} {{- end -}}
 <div class="article-container">
-<section class="article-header" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
+  <section
+    class="article-header"
+    {{-
+    if
+    $justify
+    -}}style="text-align: justify;"
+    {{-
+    end
+    -}}
+  >
     <h1>{{- .Title | safeHTML -}}</h1>
     <p class="article-meta">
-        {{- if .Date -}}<span class="article-date">{{- .Date.Format "2006-01-02" -}}</span>{{- end -}}
-        {{- if gt .ReadingTime 0 -}}
-            <span class="article-reading-time">&nbsp;&middot;&nbsp;{{- .ReadingTime -}} min read</span>
-        {{- end -}}
-        {{- if .Params.categories -}}
-            <span class="article-categories">
-                &nbsp;&middot;&nbsp;
-                {{- range $i, $cat := .Params.categories -}}
-                    {{- if $i -}}, {{ end -}}
-                    {{- $cat -}}
-                {{- end -}}
-            </span>
-        {{- end -}}
+      {{- if .Date -}}<span class="article-date"
+        >{{- .Date.Format "2006-01-02" -}}</span
+      >{{- end -}} {{- if gt .ReadingTime 0 -}}
+      <span class="article-reading-time"
+        >&nbsp;&middot;&nbsp;{{- .ReadingTime -}} min read</span
+      >
+      {{- end -}} {{- if .Params.categories -}}
+      <span class="article-categories">
+        &nbsp;&middot;&nbsp; {{- range $i, $cat := .Params.categories -}} {{- if
+        $i -}}, {{ end -}} {{- $cat -}} {{- end -}}
+      </span>
+      {{- end -}}
     </p>
     {{ if ne $lastmod $date }}
-    <p class="lastmod-date">{{- i18n "edited" | safeHTML -}} {{- .Lastmod.Format "2006-01-02" -}}</p>
+    <p class="lastmod-date">
+      {{- i18n "edited" | safeHTML -}} {{- .Lastmod.Format "2006-01-02" -}}
+    </p>
     {{- end -}}
-</section>
-{{- partial "article-labels.html" . -}}
-
-{{- with .Params.imgs -}}
-    {{- $imgCount := len . -}}
-    {{- if eq $imgCount 1 -}}
-        <div class="article-imgs single-img">
-            {{- range . -}}
-                <img class="article-img" src="{{ . | relURL }}" alt="Featured image" />
-            {{- end -}}
-        </div>
-    {{- else if gt $imgCount 1 -}}
-        <div class="article-imgs multi-imgs">
-            {{- range . -}}
-                <img class="article-img" src="{{ . | relURL }}" alt="Article image" />
-            {{- end -}}
-        </div>
+  </section>
+  {{- partial "article-labels.html" . -}} {{- with .Params.imgs -}} {{-
+  $imgCount := len . -}} {{- if eq $imgCount 1 -}}
+  <div class="article-imgs single-img">
+    {{- range . -}}
+    <img
+      class="article-img"
+      src="{{ . | relURL }}"
+      alt="{{ $.Title }} featured image"
+    />
     {{- end -}}
-{{- end -}}
+  </div>
+  {{- else if gt $imgCount 1 -}}
+  <div class="article-imgs multi-imgs">
+    {{- range . -}}
+    <img
+      class="article-img"
+      src="{{ . | relURL }}"
+      alt="{{ $.Title }} gallery preview"
+    />
+    {{- end -}}
+  </div>
+  {{- end -}} {{- end -}} {{- if .Site.Params.ShowOutdatedOnPosts -}} {{-
+  partial "outdated-warning.html" (dict "ageDays" $ageDays "context" .) -}} {{-
+  end -}}
 
-{{- if .Site.Params.ShowOutdatedOnPosts -}}
-{{- partial "outdated-warning.html" (dict "ageDays" $ageDays "context" .) -}}
-{{- end -}}
-
-<article class="markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
+  <article
+    class="markdown-body"
+    {{-
+    if
+    $justify
+    -}}style="text-align: justify;"
+    {{-
+    end
+    -}}
+  >
     {{- .Content -}}
-</article>
+  </article>
 </div>
-{{- partial "article-license.html" . -}}
-{{- partial "article-bottom-navigation.html" . -}}
-{{- partial "article-comments.html" . -}}
+{{- partial "article-license.html" . -}} {{- partial
+"article-bottom-navigation.html" . -}} {{- partial "article-comments.html" . -}}
 {{- end -}}
