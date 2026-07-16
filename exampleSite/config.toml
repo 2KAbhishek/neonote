@@ -10,6 +10,9 @@ hasCJKLanguage = true
 
 enableRobotsTXT = true
 
+[pagination]
+  pagerSize = 2
+
 [markup.highlight]
   codeFences = true
   guessSyntax = true

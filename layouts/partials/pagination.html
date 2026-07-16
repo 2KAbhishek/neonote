@@ -4,33 +4,53 @@
 
 {{- $pageIndex := $paginator.PageNumber -}}
 {{- $totalPages := $paginator.TotalPages -}}
-{{- $cols := 5.0 -}}
-{{- $rows := math.Ceil (div $totalPages $cols) -}}
-{{- $row := math.Ceil (div $pageIndex $cols) -}}
-{{- $startPage := sub (mul $row $cols) $cols -}}
-{{- $endPage := add $startPage $cols -}}
 
 <div class="pagination">
-    <p class="pagination-status">Page {{ $pageIndex }} of {{ $totalPages }}</p>
     <ul>
-        {{- if gt $row 1 -}}
-            <li><a href="{{- $paginator.Prev.URL -}}" class="previous_page" aria-label="Go to previous page">&larr; Previous</a></li>
+        {{- if $paginator.HasPrev -}}
+            <li><a href="{{- $paginator.Prev.URL -}}" class="previous_page" aria-label="Go to previous page">&lsaquo;</a></li>
+        {{- else -}}
+            <li class="disabled"><span class="previous_page">&lsaquo;</span></li>
         {{- end -}}
 
+        {{- $lowerLimit := sub $pageIndex 2 -}}
+        {{- $upperLimit := add $pageIndex 2 -}}
+
         {{- range $paginator.Pagers -}}
-            {{- if and (gt .PageNumber $startPage) (le .PageNumber $endPage) -}}
+            {{- $pageNumber := .PageNumber -}}
+            {{- $show := false -}}
+
+            {{- if eq $pageNumber 1 -}}
+                {{- $show = true -}}
+            {{- else if eq $pageNumber $totalPages -}}
+                {{- $show = true -}}
+            {{- else if and (ge $pageNumber $lowerLimit) (le $pageNumber $upperLimit) -}}
+                {{- $show = true -}}
+            {{- end -}}
+
+            {{- if $show -}}
+                {{- if and (eq $pageNumber $lowerLimit) (gt $pageNumber 2) -}}
+                    <li class="pagination-ellipsis"><span>&hellip;</span></li>
+                {{- end -}}
+
                 {{- $active := "" -}}
                 {{- $current := "" -}}
-                {{- if eq .PageNumber $paginator.PageNumber -}}
+                {{- if eq $pageNumber $pageIndex -}}
                     {{- $active = "active" -}}
                     {{- $current = "page" -}}
                 {{- end -}}
                 <li><a class="{{- $active -}}" href="{{- .URL -}}" aria-label="Go to page {{- .PageNumber -}}" {{ with $current }}aria-current="{{- . -}}"{{ end }}>{{- .PageNumber -}}</a></li>
+
+                {{- if and (eq $pageNumber $upperLimit) (lt $pageNumber (sub $totalPages 1)) -}}
+                    <li class="pagination-ellipsis"><span>&hellip;</span></li>
+                {{- end -}}
             {{- end -}}
         {{- end -}}
 
-        {{- if lt $row $rows -}}
-            <li><a href="{{- $paginator.Next.URL -}}" class="next_page" aria-label="Go to next page">Next &rarr;</a></li>
+        {{- if $paginator.HasNext -}}
+            <li><a href="{{- $paginator.Next.URL -}}" class="next_page" aria-label="Go to next page">&rsaquo;</a></li>
+        {{- else -}}
+            <li class="disabled"><span class="next_page">&rsaquo;</span></li>
         {{- end -}}
     </ul>
 </div>
