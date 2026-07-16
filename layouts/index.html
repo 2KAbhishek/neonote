@@ -1,5 +1,7 @@
 {{- define "main" -}}
-{{- $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $pages = where $pages ".Params.hidden" "!=" true -}}
+{{- $paginator := .Paginate $pages -}}
 {{- partial "note-list.html" $paginator -}}
 {{- partial "pagination.html" $paginator -}}
 {{- end -}}

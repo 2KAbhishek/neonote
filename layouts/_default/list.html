@@ -1,5 +1,5 @@
 {{- define "main" -}}
-{{- $paginator := .Paginator -}}
+{{- $paginator := .Paginate (where .RegularPages ".Params.hidden" "!=" true) -}}
 
 <section class="article-header"><h1>{{- .Title -}}</h1></section>
 {{- if .Content -}}

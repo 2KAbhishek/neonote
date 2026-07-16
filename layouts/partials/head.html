@@ -11,7 +11,9 @@
 <meta http-equiv="content-language" content="en">
 
 {{ if .IsHome }}
-    {{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $pages = where $pages ".Params.hidden" "!=" true }}
+    {{ $paginator := .Paginate $pages }}
     {{ if eq $paginator.PageNumber 1 }}
         <link rel="canonical" href="{{ .Permalink }}">
     {{ else }}
@@ -43,4 +45,3 @@
 {{- block "title" . -}}{{- end -}}
 
 {{- partial "style.html" . -}}
-
