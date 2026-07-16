@@ -4,7 +4,7 @@ theme = "neonote"
 themesdir = "../.."
 copyright = "Neonote"
 
-languageCode = "en"  # for the rss generation. See https://github.com/gohugoio/hugo/issues/349
+locale = "en"  # for the rss generation. See https://github.com/gohugoio/hugo/issues/349
 defaultContentLanguage = "en"  # for the site language. Use Hugo i18n configuration
 hasCJKLanguage = true
 
@@ -104,11 +104,11 @@ summaryLength = 120  # Number of characters to show in post summaries on list pa
   minifyOutput = true
   [minify.tdewolff]
     [minify.tdewolff.css]
-      keepCSS2 = true
+      version = 0
       precision = 1
     [minify.tdewolff.html]
       keepComments = false
-      keepConditionalComments = true
+      keepSpecialComments = true
       keepDefaultAttrVals = true
       keepDocumentTags = true
       keepEndTags = true

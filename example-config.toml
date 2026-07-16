@@ -2,7 +2,7 @@ baseURL = "https://2kabhishek.github.io/blog/"
 title = "2KAbhishek Blogs"
 copyright = "©2024 2KAbhishek"
 
-languageCode = "en"
+locale = "en"
 hasCJKLanguage = true
 defaultContentLanguage = "en"
 summaryLength = 120  # Number of characters to show in post summaries on list pages
@@ -114,11 +114,11 @@ enableEmoji = true
   minifyOutput = true
   [minify.tdewolff]
     [minify.tdewolff.css]
-      keepCSS2 = true
+      version = 0
       precision = 1
     [minify.tdewolff.html]
       keepComments = false
-      keepConditionalComments = true
+      keepSpecialComments = true
       keepDefaultAttrVals = true
       keepDocumentTags = true
       keepEndTags = true
