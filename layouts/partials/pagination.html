@@ -11,7 +11,7 @@
 {{- $endPage := add $startPage $cols -}}
 
 <div class="pagination">
-    <p class="pagination-status">Page {{- $pageIndex -}} of {{- $totalPages -}}</p>
+    <p class="pagination-status">Page {{ $pageIndex }} of {{ $totalPages }}</p>
     <ul>
         {{- if gt $row 1 -}}
             <li><a href="{{- $paginator.Prev.URL -}}" class="previous_page" aria-label="Go to previous page">&larr; Previous</a></li>
