@@ -7,7 +7,7 @@
 <ul class="note-list">
     {{- range $paginator.Pages -}}
     {{- if not .Params.hidden -}}
-    <li class="item"><a class="note" href="{{- .RelPermalink -}}">
+    <li class="item"><a class="note" href="{{- .RelPermalink -}}" aria-label="Read {{- .Title | plainify -}}">
             <p class="note-title">{{- .Title | safeHTML -}}</p>
         </a>
             {{- if .Date -}}<p class="note-date">{{- .Date.Format "2006-01-02" -}}</p>{{- end -}}
