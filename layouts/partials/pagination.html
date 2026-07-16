@@ -11,23 +11,26 @@
 {{- $endPage := add $startPage $cols -}}
 
 <div class="pagination">
+    <p class="pagination-status">Page {{- $pageIndex -}} of {{- $totalPages -}}</p>
     <ul>
         {{- if gt $row 1 -}}
-            <li><a href="{{- $paginator.Prev.URL -}}" class="previous_page">&laquo;</a></li>
+            <li><a href="{{- $paginator.Prev.URL -}}" class="previous_page" aria-label="Go to previous page">&larr; Previous</a></li>
         {{- end -}}
 
         {{- range $paginator.Pagers -}}
             {{- if and (gt .PageNumber $startPage) (le .PageNumber $endPage) -}}
                 {{- $active := "" -}}
+                {{- $current := "" -}}
                 {{- if eq .PageNumber $paginator.PageNumber -}}
                     {{- $active = "active" -}}
+                    {{- $current = "page" -}}
                 {{- end -}}
-                <li><a class="{{- $active -}}" href="{{- .URL -}}">{{- .PageNumber -}}</a></li>
+                <li><a class="{{- $active -}}" href="{{- .URL -}}" aria-label="Go to page {{- .PageNumber -}}" {{ with $current }}aria-current="{{- . -}}"{{ end }}>{{- .PageNumber -}}</a></li>
             {{- end -}}
         {{- end -}}
 
         {{- if lt $row $rows -}}
-            <li><a href="{{- $paginator.Next.URL -}}" class="next_page">&raquo;</a></li>
+            <li><a href="{{- $paginator.Next.URL -}}" class="next_page" aria-label="Go to next page">Next &rarr;</a></li>
         {{- end -}}
     </ul>
 </div>
