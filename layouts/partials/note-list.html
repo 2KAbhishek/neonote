@@ -7,7 +7,8 @@
 <ul class="note-list">
     {{- range $paginator.Pages -}}
     {{- if not .Params.hidden -}}
-    <li class="item"><a class="note" href="{{- .RelPermalink -}}" aria-label="Read {{- .Title | plainify -}}">
+    <li class="item">
+        <a class="note" href="{{- .RelPermalink -}}" aria-label="Read {{- .Title | plainify -}}">
             <p class="note-title">{{- .Title | safeHTML -}}</p>
         </a>
             <p class="note-meta">
@@ -25,21 +26,32 @@
                     </span>
                 {{- end -}}
             </p>
-            {{- if .Summary -}}<p class="note-content">{{- .Summary | plainify | safeHTML | truncate (default 120 .Site.Params.summaryLength) -}}</p>{{- end -}}
-            {{- $relURL := .RelPermalink -}}
-            {{- $imgs := .Params.imgs -}}
-            {{- with .Params.imgs -}}
-                <span class="note-imgs">
-                    {{- $imgCount := len $imgs -}}
-                    {{- range $imgs -}}
+        {{- $relURL := .RelPermalink -}}
+        {{- with .Params.imgs -}}
+            {{- $imgCount := len . -}}
+            {{- if eq $imgCount 1 -}}
+                <span class="note-imgs single-img">
+                    {{- range . -}}
                     {{- $imgurl := lower . -}}
                     {{- if and (not (hasPrefix $imgurl "http://")) (not (hasPrefix $imgurl "https://")) -}}
-                    {{- $imgurl = path.Join $relURL . -}}
+                        {{- $imgurl = path.Join $relURL . -}}
                     {{- end -}}
-                    <img class="img" src="{{- $imgurl -}}" alt />
+                    <img class="img" src="{{- $imgurl -}}" alt="Featured image preview" />
+                    {{- end -}}
+                </span>
+            {{- else if gt $imgCount 1 -}}
+                <span class="note-imgs multi-imgs">
+                    {{- range . -}}
+                    {{- $imgurl := lower . -}}
+                    {{- if and (not (hasPrefix $imgurl "http://")) (not (hasPrefix $imgurl "https://")) -}}
+                        {{- $imgurl = path.Join $relURL . -}}
+                    {{- end -}}
+                    <img class="img" src="{{- $imgurl -}}" alt="Preview image" />
                     {{- end -}}
                 </span>
             {{- end -}}
+        {{- end -}}
+            {{- if .Summary -}}<p class="note-content">{{- .Summary | plainify | safeHTML | truncate (default 120 .Site.Params.summaryLength) -}}</p>{{- end -}}
 
         {{- if or .Params.categories .Params.tags -}}
             <p class="note-labels">

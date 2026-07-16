@@ -7,6 +7,10 @@ tags = [
     "shortcodes",
     "privacy",
 ]
+imgs = [
+    "https://picsum.photos/id/10/600/400",
+    "https://picsum.photos/id/20/600/400",
+]
 +++
 
 Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of different social media embeds.

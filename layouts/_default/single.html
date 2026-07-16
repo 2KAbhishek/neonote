@@ -28,6 +28,23 @@
 </section>
 {{- partial "article-labels.html" . -}}
 
+{{- with .Params.imgs -}}
+    {{- $imgCount := len . -}}
+    {{- if eq $imgCount 1 -}}
+        <div class="article-imgs single-img">
+            {{- range . -}}
+                <img class="article-img" src="{{ . | relURL }}" alt="Featured image" />
+            {{- end -}}
+        </div>
+    {{- else if gt $imgCount 1 -}}
+        <div class="article-imgs multi-imgs">
+            {{- range . -}}
+                <img class="article-img" src="{{ . | relURL }}" alt="Article image" />
+            {{- end -}}
+        </div>
+    {{- end -}}
+{{- end -}}
+
 {{- if .Site.Params.ShowOutdatedOnPosts -}}
 {{- partial "outdated-warning.html" (dict "ageDays" $ageDays "context" .) -}}
 {{- end -}}
