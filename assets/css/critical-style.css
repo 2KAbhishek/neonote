@@ -25,30 +25,30 @@ html[data-theme="dark"] img {
 }
 
 html {
-  background: #eeeeee;
-  --background-color: #eeeeee;
-  --site-name-color: #0a0a0a;
+  background: #ffffff;
+  --background-color: #f0f0f0;
+  --site-name-color: #111111;
   --color-primary: #1688f0;
   --link-underline: #90cff9;
   --blockquote-border-left: 6px solid #0051a2;
-  --block-background-color: #f7faff;
+  --block-background-color: #f5f5f5;
   --pag-background-color: rgba(0, 122, 255, 0.5);
   --box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
-  --title-color: #303033;
-  --body-color: #444;
+  --title-color: #111111;
+  --body-color: #151515;
 }
 
 html[data-theme="dark"] {
-  background: #000;
+  background: #000000;
   --background-color: #0a0a0a;
-  --site-name-color: #eeeeee;
+  --site-name-color: #efefef;
   --color-primary: #1688f0;
   --link-underline: #0051a2;
   --blockquote-border-left: 6px solid #5176bf;
-  --block-background-color: #002c58;
+  --block-background-color: #0d0d0d;
   --box-shadow: none;
-  --title-color: #dadada;
-  --body-color: #e9e9e9;
+  --title-color: #efefef;
+  --body-color: #dedede;
 }
 
 h1,
