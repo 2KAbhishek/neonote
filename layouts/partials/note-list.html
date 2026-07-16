@@ -10,7 +10,21 @@
     <li class="item"><a class="note" href="{{- .RelPermalink -}}" aria-label="Read {{- .Title | plainify -}}">
             <p class="note-title">{{- .Title | safeHTML -}}</p>
         </a>
-            {{- if .Date -}}<p class="note-date">{{- .Date.Format "2006-01-02" -}}</p>{{- end -}}
+            <p class="note-meta">
+                {{- if .Date -}}<span class="note-date">{{- .Date.Format "2006-01-02" -}}</span>{{- end -}}
+                {{- if gt .ReadingTime 0 -}}
+                    <span class="note-reading-time">&nbsp;&middot;&nbsp;{{- .ReadingTime -}} min read</span>
+                {{- end -}}
+                {{- if .Params.categories -}}
+                    <span class="note-categories">
+                        &nbsp;&middot;&nbsp;
+                        {{- range $i, $cat := .Params.categories -}}
+                            {{- if $i -}}, {{ end -}}
+                            {{- $cat -}}
+                        {{- end -}}
+                    </span>
+                {{- end -}}
+            </p>
             {{- if .Summary -}}<p class="note-content">{{- .Summary | plainify | safeHTML | truncate (default 120 .Site.Params.summaryLength) -}}</p>{{- end -}}
             {{- $relURL := .RelPermalink -}}
             {{- $imgs := .Params.imgs -}}

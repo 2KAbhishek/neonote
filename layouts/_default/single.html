@@ -7,9 +7,21 @@
 <div class="article-container">
 <section class="article-header" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
     <h1>{{- .Title | safeHTML -}}</h1>
-    {{- if .Date -}}
-    <p class="article-date">{{- .Date.Format "2006-01-02" -}}</p>
-    {{- end -}}
+    <p class="article-meta">
+        {{- if .Date -}}<span class="article-date">{{- .Date.Format "2006-01-02" -}}</span>{{- end -}}
+        {{- if gt .ReadingTime 0 -}}
+            <span class="article-reading-time">&nbsp;&middot;&nbsp;{{- .ReadingTime -}} min read</span>
+        {{- end -}}
+        {{- if .Params.categories -}}
+            <span class="article-categories">
+                &nbsp;&middot;&nbsp;
+                {{- range $i, $cat := .Params.categories -}}
+                    {{- if $i -}}, {{ end -}}
+                    {{- $cat -}}
+                {{- end -}}
+            </span>
+        {{- end -}}
+    </p>
     {{ if ne $lastmod $date }}
     <p class="lastmod-date">{{- i18n "edited" | safeHTML -}} {{- .Lastmod.Format "2006-01-02" -}}</p>
     {{- end -}}

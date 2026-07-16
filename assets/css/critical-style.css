@@ -215,7 +215,13 @@ html[data-theme="dark"] .dark-hidden {
   font-weight: 700;
 }
 
-.note-date,
+.note-meta {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--body-color);
+  opacity: 0.75;
+}
+
 .note-content {
   font-size: 15px;
   text-decoration: none;
@@ -232,16 +238,29 @@ html[data-theme="dark"] .dark-hidden {
 .article-tag,
 .article-category {
   display: inline-block;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1;
   padding-right: 6px;
   margin: 2px 3px 2px 0;
   white-space: nowrap;
   border-radius: 3px;
+  text-decoration: none;
+}
+
+.article-tag {
+  color: var(--body-color);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.article-tag:hover {
+  color: var(--color-primary);
+  opacity: 1;
 }
 
 .article-category {
   color: #3a8c42;
+  opacity: 0.8;
 }
 
 .article-category .hashtag,
@@ -306,10 +325,19 @@ ul.archive-list li {
   margin: 20px 0;
 }
 
-.article-date {
+.article-container .article-header {
+  margin: 10px 0 0 0;
+}
+
+.article-meta {
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 8px;
+  margin-bottom: 0;
   color: #838387;
+}
+
+.article-container .article-labels {
+  margin-top: -8px;
 }
 
 .lastmod-date {
