@@ -51,7 +51,13 @@
                 </span>
             {{- end -}}
         {{- end -}}
-            {{- if .Summary -}}<p class="note-content">{{- .Summary | plainify | safeHTML | truncate (default 120 .Site.Params.summaryLength) -}}</p>{{- end -}}
+            {{- $summary := "" -}}
+            {{- if .Description -}}
+                {{- $summary = .Description -}}
+            {{- else if .Summary -}}
+                {{- $summary = .Summary | plainify | safeHTML | truncate (default 120 .Site.Params.summaryLength) -}}
+            {{- end -}}
+            {{- if $summary -}}<p class="note-content">{{- $summary | safeHTML -}}</p>{{- end -}}
 
         {{- if or .Params.categories .Params.tags -}}
             <p class="note-labels">
