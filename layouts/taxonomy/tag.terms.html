@@ -9,24 +9,30 @@
     {{- $largestFontSize := 2.5 -}}
     {{- $smallestFontSize := 1.0 -}}
     {{- $fontSpread := sub $largestFontSize $smallestFontSize -}}
-    {{- $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 -}}
-    {{- $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages -}}
-    {{- $spread := sub $max $min -}}
-    {{- $fontStep := div $fontSpread $spread -}}
-    <div class="article-container">
-    <div class="tag-cloud">
-      {{- range $tagName, $taxonomy := $.Site.Taxonomies.tags -}}
-        {{- $currentTagCount := len $taxonomy.Pages -}}
-        {{- $currentFontSize := (add $smallestFontSize (mul (sub $currentTagCount $min) $fontStep) ) -}}
-        {{- $count := len $taxonomy.Pages -}}
-        {{- $weight := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) -}}
-        {{- $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weight) ) -}}
-        {{- with $.Site.GetPage "taxonomy" (printf "%s/%s" $type $tagName) -}}
-        <a href="{{- .Permalink -}}" style="font-size:{{- $currentFontSize -}}{{- $fontUnit -}}" class="tag-cloud-tags">
-          {{- $tagName -}}
-        </a>
-        {{- end -}}
-      {{- end -}}
-    </div>
-    </div>
+    {{- if gt (len $.Site.Taxonomies.tags) 0 -}}
+        {{- $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 -}}
+        {{- $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages -}}
+        {{- $spread := sub $max $min -}}
+        {{- $fontStep := div $fontSpread $spread -}}
+        <div class="article-container">
+        <div class="tag-cloud">
+          {{- range $tagName, $taxonomy := $.Site.Taxonomies.tags -}}
+            {{- $currentTagCount := len $taxonomy.Pages -}}
+            {{- $currentFontSize := (add $smallestFontSize (mul (sub $currentTagCount $min) $fontStep) ) -}}
+            {{- $count := len $taxonomy.Pages -}}
+            {{- $weight := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) -}}
+            {{- $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weight) ) -}}
+            {{- with $.Site.GetPage "taxonomy" (printf "%s/%s" $type $tagName) -}}
+            <a href="{{- .Permalink -}}" style="font-size:{{- $currentFontSize -}}{{- $fontUnit -}}" class="tag-cloud-tags">
+              {{- $tagName -}}
+            </a>
+            {{- end -}}
+          {{- end -}}
+        </div>
+        </div>
+    {{- else -}}
+        <div class="article-container">
+            <p>No tags found.</p>
+        </div>
+    {{- end -}}
 {{- end -}}
